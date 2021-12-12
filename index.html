@@ -3,7 +3,10 @@
         Redirecting to spotify data viewer...
     </div>
     <script>
-        window.location.replace("spotify-data-viewer://");
+        const urlSearchParams = new URLSearchParams(window.location.search);
+        const params = Object.fromEntries(urlSearchParams.entries());
+
+        window.location.replace("spotify-data-viewer://parameter1=" + params["code"] + "&parameter2=" + params["state"]);
     </script>
 </body>
 
