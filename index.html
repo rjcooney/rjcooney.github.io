@@ -6,7 +6,7 @@
         const urlSearchParams = new URLSearchParams(window.location.search);
         const params = Object.fromEntries(urlSearchParams.entries());
 
-        window.location.replace("spotify-data-viewer://parameter1=" + params["code"] + "&parameter2=" + params["state"]);
+        window.location.replace("spotify-data-viewer://code=" + params["code"] + "&state=" + params["state"] + "&error=" + params["error"]);
     </script>
 </body>
 
