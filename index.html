@@ -6,7 +6,16 @@
         const urlSearchParams = new URLSearchParams(window.location.search);
         const params = Object.fromEntries(urlSearchParams.entries());
 
-        window.location.replace("spotify-data-viewer://code=" + params["code"] + "&state=" + params["state"] + "&error=" + params["error"]);
+        window.location.replace("spotify-data-viewer://code=" 
+            + ReplaceUndefined(params["code"]) 
+            + "&state=" 
+            + ReplaceUndefined(params["state"])
+            + "&error=" 
+            + ReplaceUndefined(params["error"]));
+    
+        function ReplaceUndefined(parameter) {
+            return typeof(parameter) == "undefined" ? "" : parameter;
+        }
     </script>
 </body>
 
